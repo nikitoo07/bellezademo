@@ -263,6 +263,9 @@ body {
         width: 100%;
         justify-content: center;
     }
+    .nav-link-cta {
+       display: none;
+    }
 }
 
 /* Sparkle Animation */
@@ -1144,4 +1147,5 @@ body {
     .testimonial-card {
         padding: 1.5rem;
     }
+
 }
