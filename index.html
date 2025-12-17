@@ -4,526 +4,382 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belleza Premium - Cosméticos y Skincare de Lujo</title>
-    <meta name="description"
-        content="Descubre nuestra línea exclusiva de productos de belleza, skincare y cosméticos premium. Transforma tu piel con ingredientes naturales y tecnología avanzada.">
+    <title>Niko | Desarrollador Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fbff;
+            color: #1a1a2e;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0077b6 0%, #00a8e8 100%);
+            color: white;
+            padding: 60px 24px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 50px 0;
+            border-bottom: 1px solid #e0e8f0;
+        }
+
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #0077b6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: #333;
+            margin-bottom: 16px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .skill-item {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+        }
+
+        .skill-item strong {
+            display: block;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+
+        .skill-bar-bg {
+            background: #e8f4fc;
+            border-radius: 4px;
+            height: 8px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #0077b6;
+        }
+
+        .timeline-item .date {
+            font-weight: 600;
+            color: #0077b6;
+            min-width: 90px;
+        }
+
+        .timeline-item .desc {
+            color: #333;
+        }
+
+        .resources-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+        }
+
+        .resources-list a {
+            display: block;
+            padding: 16px 20px;
+            background: white;
+            border: 1px solid #e0e8f0;
+            border-radius: 8px;
+            color: #0077b6;
+            text-decoration: none;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #e0e8f0;
+        }
+
+        .contact-info p {
+            margin-bottom: 12px;
+            color: #333;
+        }
+
+        .contact-info a {
+            color: #0077b6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 30px 24px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: 500;
+        }
+
+        footer p {
+            margin-top: 12px;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .project-button {
+            background-color: #0077b6;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .project-button .link {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Tema oscuro: agrega al final de styles.css */
+
+        body,
+        header,
+        .skill-item,
+        .timeline-item,
+        .resources-list a,
+        .contact-info,
+        footer {
+            transition: background-color .25s ease, color .25s ease, border-color .25s ease;
+        }
+
+        /* Clase que activa el tema oscuro */
+        body.oscuro {
+            background-color: #0f1724;
+            /* fondo general oscuro */
+            color: #e6eef8;
+            /* texto claro */
+        }
+
+        /* header oscuro */
+        body.oscuro header {
+            background: linear-gradient(135deg, #04293a 0%, #08304a 100%);
+            color: #e6eef8;
+        }
+
+        /* cards y contenedores */
+        body.oscuro .skill-item,
+        body.oscuro .timeline-item,
+        body.oscuro .contact-info,
+        body.oscuro .resources-list a {
+            background: #0b1220;
+            border-color: #213445;
+            color: #dbe9f8;
+        }
+
+        /* barras de habilidades */
+        body.oscuro .skill-bar-bg {
+            background: #07202b;
+        }
+
+        body.oscuro .skill-bar-fill {
+            box-shadow: none;
+        }
+
+        /* enlaces */
+        body.oscuro a {
+            color: #7ec8ff;
+        }
+
+        body.oscuro a:hover {
+            color: #aee6ff;
+        }
+
+        /* botones */
+        body.oscuro .project-button {
+            background-color: #144b63;
+            color: #e6eef8;
+            border: 1px solid #1b5f74;
+        }
+
+        body.oscuro .project-button .link {
+            color: #e6eef8;
+        }
+
+        /* footer */
+        body.oscuro footer {
+            background: #071928;
+            color: #9fcfe8;
+        }
+
+        /* pequeñas mejoras de accesibilidad/contraste */
+        body.oscuro .profile-img {
+            border-color: #0b202b;
+        }
+
+        body.oscuro h2 {
+            color: #4fd1ff;
+        }
+
+        body.oscuro p {
+            color: #cbd5e1;
+        }
+
+        body.oscuro strong {
+            color: #e6eef8;
+        }
+
+        /* animaciones suaves al cambiar tema */
+        html {
+            transition: background-color .25s ease, color .25s ease;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <header>
         <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <span class="logo-text">Belleza Premium</span>
-                </div>
-
-                <ul class="nav-links" id="navLinks">
-                    <li class="nav-item">
-                        <a href="#inicio" class="nav-link">
-                            <span class="nav-link-text">Inicio</span>
-                            <span class="nav-link-underline"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#productos" class="nav-link">
-                            <span class="nav-link-text">Productos</span>
-                            <span class="nav-link-underline"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#testimonios" class="nav-link">
-                            <span class="nav-link-text">Testimonios</span>
-                            <span class="nav-link-underline"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#caracteristicas" class="nav-link">
-                            <span class="nav-link-text">Características</span>
-                            <span class="nav-link-underline"></span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#contacto" class="nav-link nav-link-cta">
-                            <span class="nav-link-text">Contacto</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <!-- Hamburger Menu -->
-                <button class="hamburger" id="hamburger" aria-label="Menú de navegación">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </div>
+            <img src="images/caballo.png" alt="Foto de perfil" class="profile-img">
+            <h1>Niko</h1>
+            <p>Desarrollador Web Frontend</p>
+            <button id="tema-btn" class="project-button" type="button">Tema oscuro</button>
         </div>
-    </nav>
+    </header>
+    <main class="container">
+        <section class="about">
+            <h2>Sobre mí</h2>
+            <p>Soy un desarrollador web apasionado por crear sitios modernos y funcionales. Me especializo en
+                tecnologías frontend como HTML, CSS y JavaScript, con un enfoque en código limpio y experiencias de
+                usuario intuitivas.</p>
+            <p>Actualmente continúo ampliando mis conocimientos a través de plataformas como freeCodeCamp, donde he
+                obtenido certificaciones en diseño web responsivo y JavaScript.</p>
+        </section>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1 class="hero-title">
-                        <span class="title-line">Descubre tu</span>
-                        <span class="title-line highlight">Belleza Natural</span>
-                    </h1>
-                    <p class="hero-subtitle">Productos de lujo que transforman tu piel y realzan tu esencia única.
-                        Experimenta el poder de la belleza consciente.</p>
-                    <div class="hero-buttons">
-                        <a href="#productos" class="btn btn-primary">Explorar Productos</a>
-                        <a href="#contacto" class="btn btn-secondary">Contáctanos</a>
+        <section>
+            <h2>Habilidades técnicas</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <strong>HTML</strong>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 90%; background: #0077b6;"></div>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="images/hero.png" alt="Productos de belleza premium">
-                    <div class="hero-image-decoration"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <span></span>
-        </div>
-    </section>
-
-    <!-- Products Section -->
-    <section id="productos" class="products">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Nuestra Colección</h2>
-                <p class="section-subtitle">Productos cuidadosamente seleccionados para tu rutina de belleza</p>
-            </div>
-
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=600&h=600&fit=crop"
-                            alt="Crema Facial Hidratante" loading="lazy">
-                        <div class="product-badge">Bestseller</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Crema Facial Hidratante</h3>
-                        <p class="product-description">Hidratación profunda con ácido hialurónico y vitamina E. Piel
-                            radiante las 24 horas.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Hidratante</span>
-                            <span class="feature-tag">Anti-edad</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$45.990</span>
-                            <button class="btn-add">Consultar</button>
-                        </div>
+                <div class="skill-item">
+                    <strong>CSS</strong>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 80%; background: #00a8e8;"></div>
                     </div>
                 </div>
-
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&h=600&fit=crop"
-                            alt="Sérum Vitamina C" loading="lazy">
-                        <div class="product-badge new">Nuevo</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Sérum Vitamina C</h3>
-                        <p class="product-description">Ilumina y unifica el tono de piel. Fórmula concentrada con
-                            antioxidantes naturales.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Iluminador</span>
-                            <span class="feature-tag">Antioxidante</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$52.990</span>
-                            <button class="btn-add">Consultar</button>
-                        </div>
+                <div class="skill-item">
+                    <strong>JavaScript</strong>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 60%; background: #48cae4;"></div>
                     </div>
                 </div>
-
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1571875257727-256c39da42af?w=600&h=600&fit=crop"
-                            alt="Contorno de Ojos" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Contorno de Ojos</h3>
-                        <p class="product-description">Reduce ojeras y líneas de expresión. Textura ligera de rápida
-                            absorción.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Anti-ojeras</span>
-                            <span class="feature-tag">Reafirmante</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$38.990</span>
-                            <button class="btn-add">Consultar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=600&h=600&fit=crop"
-                            alt="Mascarilla Purificante" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Mascarilla Purificante</h3>
-                        <p class="product-description">Limpieza profunda con arcilla rosa. Minimiza poros y controla el
-                            brillo.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Purificante</span>
-                            <span class="feature-tag">Matificante</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$32.990</span>
-                            <button class="btn-add">Consultar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 5 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product1.png" alt="Crema Nocturna Regeneradora" loading="lazy">
-                        <div class="product-badge">Popular</div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Crema Nocturna Regeneradora</h3>
-                        <p class="product-description">Regeneración celular mientras duermes. Con retinol y péptidos
-                            activos.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">Regenerador</span>
-                            <span class="feature-tag">Nutritivo</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$58.990</span>
-                            <button class="btn-add">Consultar</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Product 6 -->
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="images/product6.png" alt="Protector Solar SPF 50+" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Protector Solar SPF 50+</h3>
-                        <p class="product-description">Protección UVA/UVB de amplio espectro. Textura invisible y no
-                            grasa.</p>
-                        <div class="product-features">
-                            <span class="feature-tag">SPF 50+</span>
-                            <span class="feature-tag">No graso</span>
-                        </div>
-                        <div class="product-footer">
-                            <span class="product-price">$42.990</span>
-                            <button class="btn-add">Consultar</button>
-                        </div>
+                <div class="skill-item">
+                    <strong>Diseño Responsivo</strong>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill" style="width: 85%; background: #0077b6;"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="caracteristicas" class="features">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">¿Por Qué Elegirnos?</h2>
-                <p class="section-subtitle">Calidad y compromiso en cada producto</p>
+        </section>
+        <section>
+            <h2>Proyectos</h2>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/tareafisica/"
+                    target="_blank">Proyecto Escolar De Física</a></button>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/sol/"
+                    target="_blank">Proyecto Escolar De Fisica 2 (sol)</a></button>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/QuizGo-/"
+                    target="_blank">Proyecto QuizGo(incompleto)</a></button>
+        </section>
+        <section>
+            <h2>Demo</h2>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/demo/"
+                    target="_blank">Catalogo de ropa</a></button>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/gymdemo/"
+                    target="_blank">Gimnasio</a></button>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/perfumes-demo/"
+                    target="_blank">Catalogo de perfumes</a></button>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/barberiademo/"
+                    target="_blank">Barberia</a></button>
+            <button class="project-button"><a class="link" href="https://nikitoo07.github.io/bellezademo/"
+                    target="_blank">Belleza</a></button>
+        </section>
+        <section>
+            <h2>Formación y recursos</h2>
+            <div class="resources-list">
+                <a href="https://www.freecodecamp.org/nikoo0" target="_blank" rel="noopener">Mi perfil en
+                    freeCodeCamp</a>
+                <a href="https://www.freecodecamp.org/" target="_blank" rel="noopener">freeCodeCamp</a>
             </div>
+        </section>
+        <script src="script.js"></script>
+    </main>
 
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Ingredientes Naturales</h3>
-                    <p class="feature-description">Fórmulas con extractos botánicos y activos naturales de la más alta
-                        calidad.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                            <polyline points="22 4 12 14.01 9 11.01" />
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Dermatológicamente Probado</h3>
-                    <p class="feature-description">Todos nuestros productos están testados y aprobados por dermatólogos.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Cruelty Free</h3>
-                    <p class="feature-description">No testamos en animales. Belleza ética y consciente.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" />
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Resultados Visibles</h3>
-                    <p class="feature-description">Mejoras notables en tu piel desde las primeras aplicaciones.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                            <circle cx="9" cy="7" r="4" />
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Asesoría Personalizada</h3>
-                    <p class="feature-description">Te ayudamos a encontrar la rutina perfecta para tu tipo de piel.</p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10" />
-                            <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                    </div>
-                    <h3 class="feature-title">Envío Rápido</h3>
-                    <p class="feature-description">Recibe tus productos en la comodidad de tu hogar en tiempo récord.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonios" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Lo Que Dicen Nuestras Clientas</h2>
-                <p class="section-subtitle">Historias reales de transformación</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-placeholder gradient-testimonial-1">
-                            <span>MC</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Increíble cambio en mi piel. La crema nocturna regeneradora ha sido
-                            un antes y después. Mi piel luce más luminosa y las líneas de expresión han disminuido
-                            notablemente."</p>
-                        <div class="testimonial-author">
-                            <h4>María Constanza R.</h4>
-                            <span>Cliente desde 2023</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-placeholder gradient-testimonial-2">
-                            <span>SF</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"El sérum de vitamina C es maravilloso. Mi tono de piel se ha
-                            unificado y tengo un brillo natural que nunca había logrado. Además, la atención al cliente
-                            es excepcional."</p>
-                        <div class="testimonial-author">
-                            <h4>Sofía Fernández</h4>
-                            <span>Cliente desde 2024</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="testimonial-card">
-                    <div class="testimonial-avatar">
-                        <div class="avatar-placeholder gradient-testimonial-3">
-                            <span>VP</span>
-                        </div>
-                    </div>
-                    <div class="testimonial-content">
-                        <div class="stars">★★★★★</div>
-                        <p class="testimonial-text">"Productos de calidad premium a precios justos. La mascarilla
-                            purificante dejó mi piel súper suave y mis poros se ven mucho más pequeños. ¡Totalmente
-                            recomendado!"</p>
-                        <div class="testimonial-author">
-                            <h4>Valentina Pérez</h4>
-                            <span>Cliente desde 2023</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contacto" class="contact">
-        <div class="container">
-            <div class="contact-content-centered">
-                <div class="contact-info">
-                    <h2 class="contact-title">¿Lista para Transformar tu Piel?</h2>
-                    <p class="contact-description">Contáctanos y descubre la rutina perfecta para ti. Estamos aquí para
-                        ayudarte a alcanzar la piel de tus sueños.</p>
-
-                    <div class="contact-methods">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>WhatsApp</h4>
-                                <p>+56 9 1234 5678</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Instagram</h4>
-                                <p>@bellezapremium</p>
-                            </div>
-                        </div>
-
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                                    <polyline points="22,6 12,13 2,6" />
-                                </svg>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p>contacto@</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="social-buttons">
-                        <a href="https://wa.me/56912345678" target="_blank" class="social-btn whatsapp">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                            </svg>
-                            Escribir por WhatsApp
-                        </a>
-                        <a href="https://instagram.com/" target="_blank" class="social-btn instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                            Seguir en Instagram
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">Belleza Premium</h3>
-                    <p class="footer-text">Tu destino de confianza para productos de belleza y skincare de lujo.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul class="footer-links">
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
-                        <li><a href="#testimonios">Testimonios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Síguenos</h4>
-                    <div class="footer-social">
-                        <a href="https://instagram.com/" target="_blank" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/56912345678" target="_blank" aria-label="WhatsApp">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="currentColor">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Belleza Premium. Todos los derechos reservados.</p>
-            </div>
-        </div>
+    <footer>
+        <p>© 2025 Niko. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="18 15 12 9 6 15" />
-        </svg>
-    </button>
-
-    <script src="script.js"></script>
 </body>
 
 </html>
