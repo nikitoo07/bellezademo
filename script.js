@@ -18,25 +18,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // NAVBAR INTERACTION
 // ===================================
 const navbar = document.getElementById('navbar');
-const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
 const navLinksItems = document.querySelectorAll('.nav-link');
 
-// Toggle Mobile Menu
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-});
 
-// Close Mobile Menu When Link Clicked
-navLinksItems.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navLinks.classList.remove('active');
-        document.body.style.overflow = '';
-    });
-});
 
 // Navbar Scroll Effect & Active Link Highlight
 window.addEventListener('scroll', () => {
