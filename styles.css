@@ -100,8 +100,8 @@ body {
 }
 
 .nav-content {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
     padding: 1.2rem 0;
     transition: padding 0.4s ease;
@@ -141,10 +141,13 @@ body {
 
 /* Nav Links */
 .nav-links {
-    display: flex;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
     list-style: none;
     gap: 0.5rem;
     align-items: center;
+    justify-content: end;
 }
 
 .nav-item {
@@ -263,8 +266,9 @@ body {
         width: 100%;
         justify-content: center;
     }
+
     .nav-link-cta {
-       display: none;
+        display: none;
     }
 }
 
@@ -498,6 +502,9 @@ body {
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
     border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100%;
 }
 
 .product-card:hover {
@@ -543,6 +550,9 @@ body {
 
 .product-info {
     padding: 1.5rem;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr;
+    gap: 0.75rem;
 }
 
 .product-name {
@@ -555,15 +565,15 @@ body {
 .product-description {
     color: var(--text-medium);
     font-size: 0.95rem;
-    margin-bottom: 1rem;
     line-height: 1.6;
+    margin: 0;
 }
 
 .product-features {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
-    margin-bottom: 1.25rem;
+    margin: 0;
 }
 
 .feature-tag {
@@ -576,9 +586,11 @@ body {
 }
 
 .product-footer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
+    align-self: end;
+    padding-top: 1rem;
 }
 
 .product-price {
@@ -626,6 +638,10 @@ body {
     text-align: center;
     transition: all var(--transition-base);
     border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    height: 100%;
+    gap: 1rem;
 }
 
 .feature-card:hover {
@@ -686,6 +702,10 @@ body {
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-base);
     border: 1px solid var(--border-color);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    gap: 1.5rem;
 }
 
 .testimonial-card:hover {
@@ -1147,5 +1167,4 @@ body {
     .testimonial-card {
         padding: 1.5rem;
     }
-
 }
